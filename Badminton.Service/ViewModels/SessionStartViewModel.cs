@@ -9,4 +9,9 @@ namespace Badminton.Service.ViewModels
     {
         public Guid PlayerId { get; set; }
     }
+
+    public class SessionEndViewModel
+    {
+        public Guid SessionId { get; set; }
+    }
 }

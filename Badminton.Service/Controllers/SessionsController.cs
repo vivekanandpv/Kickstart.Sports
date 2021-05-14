@@ -42,5 +42,29 @@ namespace Badminton.Service.Controllers
             //  return an anonymous object with session id
             return Ok(new { SessionId = session.Id, Remarks = session.Remarks });
         }
+
+
+        //  End
+        [HttpPost("/end")]
+        public async Task<IActionResult> End(SessionEndViewModel viewModel)
+        {
+            //  player information here from viewModel
+            var player = await _playerService.Get(Guid.NewGuid());
+
+            //  create the session
+            var session = new Session
+            {
+                Player = player,
+                Id = Guid.NewGuid(),
+                Start = DateTime.UtcNow.AddHours(-2),
+                End = DateTime.UtcNow,
+                Remarks = $"Started session for: {player.FirstName} {player.LastName}"
+            };
+
+            //  save
+
+            //  return an anonymous object with session id
+            return Ok(new { SessionId = session.Id, Remarks = session.Remarks, Start = session.Start, End = session.End });
+        }
     }
 }
