@@ -34,7 +34,7 @@ namespace Badminton.Service.Controllers
                 Player = player,
                 Id = Guid.NewGuid(),
                 Start = DateTime.UtcNow,
-                Remarks = $"Started session for: {player.FullName}"
+                Remarks = $"Started session for: {player.FirstName} {player.LastName}"
             };
 
             //  save
