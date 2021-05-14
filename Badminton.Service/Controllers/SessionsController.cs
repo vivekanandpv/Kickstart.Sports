@@ -22,7 +22,7 @@ namespace Badminton.Service.Controllers
         }
 
         //  Start
-        [HttpPost("/start")]
+        [HttpPost("start")]
         public async Task<IActionResult> Start(SessionStartViewModel viewModel)
         {
             //  player information here from viewModel
@@ -45,7 +45,7 @@ namespace Badminton.Service.Controllers
 
 
         //  End
-        [HttpPost("/end")]
+        [HttpPost("end")]
         public async Task<IActionResult> End(SessionEndViewModel viewModel)
         {
             //  player information here from viewModel
